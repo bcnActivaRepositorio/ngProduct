@@ -1,0 +1,37 @@
+<div class="container mt-5">
+<div class="row">
+  <div class="col-lg-8 offset-lg-2">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="text-uppercase titulo">{{ title | uppercase }}</span>
+        <button class="btn btn-lg btn-success float-end text-capitalize fs-3" routerLink="/create-product">new</button>
+        <table class="table table-striped mt-3" *ngIf="listProducts.length > 0">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Category</th>
+              <th scope="col">Location</th>
+              <th scope="col">Price</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of listProducts">
+              <td class="text-capitalize">{{product.name}}</td>
+              <td class="text-capitalize">{{product.category}}</td>
+              <td class="text-capitalize">{{product.location}}</td>
+              <td class="text-capitalize">{{product.price | currency: 'EUR' }}</td><!--use of pipeline to show the euros-->
+              <td>
+
+                <i [routerLink]="['/edit-product', product._id]" class="fas fa-edit text-primary"></i>
+                <i (click) = "deleteProduct(product._id)" class="fas fa-trash text-danger"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="h5 text-center mt-5" *ngIf="listProducts.length == 0">No products to show</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,12 @@
+.text-danger{
+  margin-left: 1rem;
+
+}
+.redlight {
+  /* font-size: small; */
+  font-weight: bold;
+
+}
+.redlight small {
+  font-weight: normal;
+}
