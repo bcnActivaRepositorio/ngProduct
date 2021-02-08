@@ -97,7 +97,7 @@ productForm: FormGroup;
           // what should show in the fields
           product:  data.name,
           category: data.category,
-          location: data.location,
+          location: data.location, // you don't change and I don't know why!
           price:    data.price
         });
         console.log(data.location);
